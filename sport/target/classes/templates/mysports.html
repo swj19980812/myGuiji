@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>我的运动</title>
+		<link rel="shortcut icon" href="/img/logo.png">
+		<link rel="stylesheet" href="/css/bg.css" />
+		<link rel="stylesheet" href="/css/mySportsStyle.css" />
+		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+	</head>
+
+	<body>
+		<div class="big">
+			<div class="header">
+				<h2 class="logo">八只脚</h2>
+				<input type="checkbox" id="chk" />
+				<label for="chk" class="show-menu-btn">
+				<i class="fa fa-ellipsis-h"></i>
+			</label>
+				<!--<div id="Layer1" style="display: none; position: absolute; z-index: 100;">-->
+				<ul class="menu">
+					<a href="login" onclick="writeNameCokie()">退出登录</a>
+					<a href="mysports">我的运动</a>
+					<a id="download" href="download/sports.apk">下载应用</a>
+					<label for="chk" class="hide-menu-btn">
+					<i class="fa fa-times"></i>
+				</label>
+				</ul>
+			</div>
+
+			<div class="subDiv">
+				<p id="subTitle" class="subTitle">我的运动</p>
+			</div>
+
+			<div class="mySports" id="mySports"></div>
+
+		</div>
+
+		<script id="tmpl" type="text/html">
+			<div class="col">
+				<div class="table">
+					<h2>{{sportTitle}}</h2>
+					<ul>
+						<li>运动方式:<strong>{{mode}}</strong></li>
+						<li>开始时间:<strong>{{startTime}}</strong></li>
+						<li>结束时间:<strong>{{overTime}}</strong></li>
+						<li>总里程:<strong>{{totalDistance}}m</strong></li>
+						<!--<li>平均速度:<strong>{{averageSpeed}}</strong></li>
+						<li>最高配速:<strong>{{maxSpeed}}</strong></li>-->
+						<!--<li>最高海拔<strong>{{maxAltitude}}</strong></li>
+						<li>最低海拔<strong>{{minAltitude}}</strong></li>
+						<li>累计上升<strong>{{totalUp}}</strong></li>
+						<li>累计下降<strong>{{totalDown}}</strong></li>-->
+					</ul>
+					<a onclick="writeCokie(this.type)" href="detail" type={{sportTag}}>查看详情</a>
+				</div>
+			</div>
+		</script>
+		<script src="/js/lib/jquery.min.js"></script>
+		<script src="/js/lib/jquery.params.js"></script>
+		<script src="/js/lib/template-web.js"></script>
+		<script src="/js/lib/Cookie.js"></script>
+		<script src="/js/mysports.js"></script>
+	</body>
+
+</html>

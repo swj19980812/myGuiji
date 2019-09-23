@@ -1,0 +1,43 @@
+var userName = getCookie("userName");
+if(userName === ""){
+	console.log("no userName");
+	$("#subTitle").text("您还未登录，即将跳转...");
+	setTimeout(function(){
+		window.location.href = "login"
+	}, 3000);
+}
+console.log(userName);
+$.get('http://47.102.152.12:8080/sport/mySports', {
+	'userName': userName
+}, function(res) {
+	console.log(res);
+	var html = "";
+	for(var i in res) {
+		html += template('tmpl', res[i])
+	}
+	document.getElementById("mySports").innerHTML = html
+});
+
+
+function writeCokie(sportTag) {
+	console.log(sportTag);
+	document.cookie = "sportTag=" + sportTag
+}
+function writeNameCokie() {
+	document.cookie = "userName= "
+}
+
+function showPic(e, sUrl) {
+	var x, y;
+	x = e.clientX;
+	y = e.clientY;
+	document.getElementById("Layer1").style.left = x + 2 + 'px';
+	document.getElementById("Layer1").style.top = y + 2 + 'px';
+	document.getElementById("Layer1").innerHTML = "<img border='0' src=\"" + sUrl + "\">";
+	document.getElementById("Layer1").style.display = "";
+}
+
+function hiddenPic() {
+	document.getElementById("Layer1").innerHTML = "";
+	document.getElementById("Layer1").style.display = "none";
+}
