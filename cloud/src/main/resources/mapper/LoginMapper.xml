@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.cloud.dao.LoginDao">
+    <select id="existId" resultType="String">
+        select * from userinfo where userName = #{userName};
+    </select>
+    <select id="existPassWord" resultType="String">
+        select passWord from userinfo where userName = #{userName};
+    </select>
+    <select id="user_register" resultType="String">
+        insert into userinfo (userName,passWord,eMail) values(#{userName},#{passWord},#{eMail});
+    </select>
+    <select id="getEMail" resultType="String">
+        select eMail from userinfo where userName = #{userName};
+    </select>
+    <select id="getPassWord" resultType="String">
+        select passWord from userinfo where userName = #{userName};
+    </select>
+    <select id="getCode" resultType="String">
+        select code from mailInfo where userName = #{userName};
+    </select>
+    <select id="searchEMail" resultType="String">
+        select * from userinfo where eMail = #{eMail};
+    </select>
+    <select id="user_change_password" resultType="String">
+        update userinfo set passWord = #{passWord} where userName = #{userName};
+    </select>
+    <select id="insert_code_request" resultType="String">
+        insert into mailInfo (userName,eMail,code,time) values(#{userName},#{eMail},#{code},NOW());
+    </select>
+    <select id="update_code_request" resultType="String">
+        update mailInfo set code = #{code} where userName = #{userName};
+    </select>
+    <select id="update_time" resultType="String">
+        update mailInfo set time = NOW() where userName = #{userName};
+    </select>
+    <select id="isTimeOut" resultType="Double">
+        select (unix_timestamp(now())-unix_timestamp(time))/60 from mailInfo where userName = #{userName};
+    </select>
+</mapper>
+

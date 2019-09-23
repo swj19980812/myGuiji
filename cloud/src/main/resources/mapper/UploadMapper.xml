@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.cloud.dao.UploadFileRepository">
+    <select id="deleteByFileMd5" resultType="String">
+        delete from  upload_file where fileMd5=#{fileMd5};
+    </select>
+    <select id="findByFileMd5" resultType="java.util.HashMap">
+    select fileId,filePath,fileStatus from upload_file where fileMd5=#{fileMd5};
+    </select>
+    <select id="save" resultType="String">
+    insert into upload_file (fileId,filePath,fileSize,fileSuffix,fileName,fileMd5,createTime,updateTime,fileStatus) values (#{fileId},#{filePath},#{size},#{suffix},#{name},#{md5},NOW(),NOW(),#{status});
+    </select>
+    <select id="updata" resultType="String">
+    update upload_file set updateTime=NOW(),fileStatus=#{status} where fileMd5=#{fileMd5};
+    </select>
+</mapper>
