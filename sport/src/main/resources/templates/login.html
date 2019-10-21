@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8" />
+	<title>登录</title>
+	<link rel="shortcut icon" href="/img/logo.png">
+	<link rel="stylesheet" type="text/css" href="/css/loginStyle.css" />
+	<link rel="stylesheet" type="text/css" href="/css/animate-custom.css" />
+</head>
+
+<body>
+<div class="container">
+	<div style="text-align:center;clear:both;"></div>
+	<section>
+		<div id="container_demo">
+			<a class="hiddenanchor" id="toregister"></a>
+			<a class="hiddenanchor" id="tologin"></a>
+			<div id="wrapper">
+				<div id="login" class="animate form">
+					<form autocomplete="on">
+						<h1>登  录</h1>
+						<p>
+							<label for="username" class="uname" data-icon="u">请输入用户名</label>
+							<input id="username" onkeyup="pressEnter('password')" name="username" required="required" type="text" />
+						</p>
+						<p>
+							<label for="password" class="youpasswd" data-icon="p">请输入密码</label>
+							<input id="password" onkeyup="pressEnter('loginBtn')"  name="password" required="required" type="password" onkeypress="">
+						</p>
+						<p id="error_box1" class="tips"></p>
+						<p class="login button">
+							<input id="loginBtn" type="button" value="登 录" />
+						</p>
+						<p class="change_link">
+							没有账号？
+							<a href="#toregister" class="to_register">立即注册</a>
+						</p>
+					</form>
+				</div>
+
+				<div id="register" class="animate form">
+					<form action="#" autocomplete="on">
+						<h1>注  册</h1>
+						<p>
+							<label for="usernamesignup" class="uname" data-icon="u">请输入用户名</label>
+							<input onkeyup="pressEnter('passwordsignup')" id="usernamesignup" name="usernamesignup" required="required" type="text"  />
+						</p>
+						<p>
+							<label for="passwordsignup" class="youpasswd" data-icon="p">请输入密码</label>
+							<input onkeyup="pressEnter('passwordsignup_confirm')" id="passwordsignup" name="passwordsignup" required="required" type="password" />
+						</p>
+						<p>
+							<label for="passwordsignup_confirm" class="youpasswd" data-icon="p">确认密码</label>
+							<input onkeyup="pressEnter('signupBtn')" id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password"/>
+						</p>
+						<p id="error_box2" class="tips"></p>
+						<p class="signin button">
+							<input id="signupBtn" type="button" value="注 册" />
+						</p>
+						<p class="change_link">
+							已有账号？
+							<a href="#tologin" class="to_register">马上登录</a>
+						</p>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</section>
+</div>
+
+</body>
+<script src="/js/lib/jquery.min.js"></script>
+<script src="/js/lib/Cookie.js"></script>
+<script src="/js/login.js"></script>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<!--<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />-->
+	<title>运动详情</title>
+	<link rel="shortcut icon" href="/img/logo.png">
+	<link rel="stylesheet" href="/css/bg.css" />
+	<link rel="stylesheet" href="/css/detailStyle.css" />
+	<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="/css/loading.css" />
+</head>
+
+<body>
+<div id="preloader-body">
+	<div id="cube-wrapper">
+		<div class="cube-folding">
+			<span class="leaf1"></span>
+			<span class="leaf2"></span>
+			<span class="leaf3"></span>
+			<span class="leaf4"></span>
+		</div>
+		<span class="loading" data-name="Loading">Loading</span>
+	</div>
+</div>
+<div class="big">
+	<div class="header">
+		<h2 class="logo">八只脚</h2>
+		<input type="checkbox" id="chk" />
+		<label for="chk" class="show-menu-btn">
+			<i class="fa fa-ellipsis-h"></i>
+		</label>
+
+		<ul class="menu">
+			<a onclick="writeNameCokie()" href="login">退出登录</a>
+			<a href="mysports">我的运动</a>
+			<a href="#">关于</a>
+			<label for="chk" class="hide-menu-btn">
+				<i class="fa fa-times"></i>
+			</label>
+		</ul>
+	</div>
+
+	<p id="subTitle" class="subTitle">运动详情</p>
+	<div id="allmap"></div>
+	<p id="sportTitle" class="pp"></p>
+	<div class="sportBriefDiv">
+		<table class="sportBrief" id="sportBrief">
+			<tr>
+				<td id="totalDistance" class="pp"></td>
+				<td id="mode" class="pp"></td>
+			</tr>
+
+			<tr>
+				<td id="startTime" class="pp"></td>
+				<td id="overTime" class="pp"></td>
+			</tr>
+
+			<tr>
+				<td id="averageSpeed" class="pp"></td>
+				<td id="maxSpeed" class="pp"></td>
+			</tr>
+
+			<tr>
+				<td id="maxAltitude" class="pp"></td>
+				<td id="minAltitude" class="pp"></td>
+			</tr>
+
+			<tr>
+				<td id="totalUp" class="pp"></td>
+				<td id="totalDown" class="pp"></td>
+			</tr>
+
+		</table>
+	</div>
+</div>
+<div id="echart" style="height:600px"></div>
+
+</body>
+<script src="/js/lib/jquery.min.js"></script>
+<script src="/js/lib/jquery.params.js"></script>
+<script src="/js/lib/template-web.js"></script>
+<script src="/js/lib/Cookie.js"></script>
+<script src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=R474f7q9gLzIAY2rWfxxjO4GGNToDzI4"></script>
+<script src="/js/detail.js"></script>
+
+</html>

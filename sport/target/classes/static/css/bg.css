@@ -1,0 +1,125 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background: url(/img/bg.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.big{
+	/*position: fixed;*/
+	/*position: relative;*/
+	width: 100%;
+}
+.header {
+	/*position: fixed;*/
+	position: relative;
+	overflow: hidden;
+	z-index: 19999;
+	margin: 0;
+	top: 0;
+	/*width: 100%;*/
+	width: auto;
+	height: 100px;
+	background: #34495e;
+	padding: 0 20px;
+	color: #fff;
+}
+
+.logo {
+	font-size: 40px;
+	line-height: 40px;
+	float: left;
+	text-transform: uppercase;
+}
+
+.menu {
+	float: right;
+	line-height: 70px;
+	padding: 0 20px;
+}
+
+.menu a {
+	font-size: 20px;
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 0 10px;
+	transition: 0.4s;
+}
+
+.show-menu-btn,
+.hide-menu-btn {
+	transform: 0.4s;
+	font-size: 30px;
+	cursor: pointer;
+	display: none;
+}
+
+.show-menu-btn {
+	float: right;
+	padding: 0 40px;
+}
+
+.show-menu-btn i{
+	line-height: 100px;
+}
+
+.menu a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover{
+	color: #3498db;
+}
+
+#chk{
+	position: absolute;
+	visibility: hidden;
+	z-index: -1111;
+}
+.subDiv{
+	height: 40px;
+	/*background:white;*/
+}
+.subTitle{
+	font-size: 30px;
+	color: #34495e;
+	padding: 0 50px;	
+}
+
+@media screen and (max-width: 700px) {
+	.show-menu-btn, 
+	.hide-menu-btn {
+		display: block;
+	}
+	.menu {
+		position: fixed;
+		width: 50%;
+		/*width: auto;*/
+		height: 100%;
+		background: #333;
+		/*left: 0;*/
+		right: -100%;
+		top: 0;
+		text-align: center;
+		padding: 80px 0;
+		line-height: normal;
+		transition: 0.7s;
+	}
+	.menu a {
+		display: block;
+		padding: 20px;
+	}
+	.hide-menu-btn {
+		position: absolute;
+		top: 40px;
+		right: 40px;
+	}
+	.mySports {
+		/*width: 100%;*/
+		width: auto;
+	}
+	#chk:checked ~ .menu{
+		right: 0;
+	}
+}

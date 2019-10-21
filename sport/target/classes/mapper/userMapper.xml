@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jit.sports.Dao.UserDao">
+
+    <select id="login" resultType="com.jit.sports.entry.UserInfo">
+        select * from user where userName = #{userName} and password = #{password}
+    </select>
+
+    <select id="existUserName" resultType="String">
+        select userName from user where userName = #{userName}
+    </select>
+
+    <insert id="reg">
+        insert into user (userName, password) values (#{userName}, #{password})
+    </insert>
+
+    <update id="updateSport">
+        update sportInfo set overTime=#{overTime}, totalDistance=#{totalDistance}, totalUp=#{totalUp},
+        totalDown=#{totalDown}, averageSpeed=#{averageSpeed}, maxSpeed=#{maxSpeed},
+        maxAltitude=#{maxAltitude}, minAltitude=#{minAltitude},mode=#{mode},sportTitle=#{sportTitle}
+        where sportTag=#{sportTag}
+    </update>
+
+    <insert id="insertSport">
+        insert into sportInfo (sportTag, userName, startTime) values (#{sportTag},#{userName},#{startTime})
+    </insert>
+
+    <select id="selectSportByName" resultType="com.jit.sports.entry.SportInfo">
+        select * from sportInfo where userName = #{userName} and overTime is not NULL order by startTime DESC
+    </select>
+
+    <select id="selectNotOverSport" resultType="com.jit.sports.entry.SportInfo">
+        select * from sportInfo where userName = #{userName} and overTime is NULL order by startTime desc
+    </select>
+
+    <select id="selectSportByTag" resultType="com.jit.sports.entry.SportInfo">
+        select * from sportInfo where sportTag = #{sportTag}
+    </select>
+
+</mapper>

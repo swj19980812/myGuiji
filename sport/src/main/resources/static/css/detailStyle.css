@@ -1,0 +1,25 @@
+.pp {
+	color: #191919;
+	font-size: 20px;
+	padding: 0 50px;
+	width: 50%;
+}
+
+.sportBriefDiv {
+	background: rgba(255, 255, 255, 0.5);
+	width: 100%;
+}
+
+.sportBrief {
+	width: 100%;
+	padding: 0 0px;
+}
+
+#allmap {
+	height: 500px;
+	/*padding: 200px 200px;*/
+	margin-top:50px;
+	margin-bottom:50px;
+	margin-right:5%;
+	margin-left:5%;	
+}
